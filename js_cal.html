@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        .contain {
+            width:50%;
+            margin: auto;
+        }
+        .display {
+            font-size: 50px;
+            width: 324px;
+            text-align: end;
+        }
+        .btn button {
+            font-size: 50px;
+            width: 80px;
+        }
+        .ans {
+            font-size: 50px;
+            width: 332px;
+            background-color: rgb(170, 178, 185);
+        }
+        .title{
+            font-weight: bolder;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="contain">
+        <div class="title"><h1>CALCULATOR</h1></div>
+        <input type="text" class="display" id="display" style="background-color:lightyellow;">
+        <div class="btn">
+            <div class="row1">
+                <button value="7" onclick="insert(7)" style="background-color:lightblue;">7</button>
+                <button value="8" onclick="insert(8)" style="background-color:lightblue;">8</button>
+                <button value="9" onclick="insert(9)" style="background-color:lightblue;">9</button>
+                <button value="clr" onclick="clr()" style="background-color: lightgray;">C</button>
+            </div>
+            <div class="row2">
+                <button value="4" onclick="insert(4)" style="background-color:lightblue;">4</button>
+                <button value="5" onclick="insert(5)" style="background-color:lightblue;">5</button>
+                <button value="6" onclick="insert(6)" style="background-color:lightblue;">6</button>
+                <button value="*" onclick="insert('*')" style="background-color: lightgray;">*</button>
+            </div>
+            <div class="row3">
+                <button value="1" onclick="insert(1)" style="background-color:lightblue;">1</button>
+                <button value="2" onclick="insert(2)" style="background-color:lightblue;">2</button>
+                <button value="3" onclick="insert(3)" style="background-color:lightblue;">3</button>
+                <button value="/" onclick="insert('/')" style="background-color: lightgray;">/</button>
+            </div>
+            <div class="row4">
+                <button value="0" onclick="insert(0)" style="background-color:lightblue;">0</button>
+                <button value="." onclick="insert('.')" style="background-color: lightgray;">.</button>
+                <button value="-" onclick="insert('-')" style="background-color: lightgray;">-</button>
+                <button value="+" onclick="insert('+')" style="background-color: lightgray;">+</button>
+            </div>
+        </div>
+        <button class="ans" id="ans" value="=" onclick="ans()">Answer (=)</button>
+    </div>
+    <script>
+        function insert(num){
+            document.querySelector("#display").value = document.querySelector("#display").value + num;
+        }
+        function clr() {
+            document.querySelector("#display").value = " ";
+        }
+        function ans() {
+            document.querySelector("#display").value = eval(document.querySelector("#display").value);
+            
+        }
+    </script>
+</body>
+</html>
